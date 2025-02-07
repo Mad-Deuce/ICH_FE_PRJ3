@@ -4,12 +4,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
     <link rel="stylesheet" type="text/css" href="src/styles/styles.css" />
     <title>Document</title>
 </head>
 
 <body>
+    <div class="container-main">
+        <div>
+            <h3>Wednesday</h3>
+            <p>january 3</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <span class="material-symbols-outlined"> search </span>
+        </div>
+        <div class="filter-bar">
+            <div class="filter-active left">
+                <span class="material-symbols-outlined"> check </span>
+                <p>All</p>
+            </div>
+            <div class="middle">
+                <span class="material-symbols-outlined"> check </span>
+                <p>Active</p>
+            </div>
+            <div class="right">
+                <span class="material-symbols-outlined"> check </span>
+                <p>Finished</p>
+            </div>
+        </div>
+        <div class="tasks">
+            <h3>Tasks list</h3>
 
+            <div class="card finished">
+                <div>
+                    <input type="checkbox">
+                    <div>
+                        <p>10 января, 11:30</p>
+                        <p>Покормить кошку</p>
+                    </div>
+                </div>
+                <span class="material-symbols-outlined"> delete </span>
+            </div>
+
+            <div class="card">
+                <div>
+                    <input type="checkbox">
+                    <div>
+                        <p>10 января, 11:30</p>
+                        <p>Покормить кошку</p>
+                    </div>
+                </div>
+                <span class="material-symbols-outlined"> delete </span>
+            </div>
+
+        </div>
+
+        <button class="btn-edit">
+            <span class="material-symbols-outlined"> edit </span>
+        </button>
+
+        <div class="container-modal">
+            <div class="modal">
+                <!-- <div> -->
+                    <span class="material-symbols-outlined"> horizontal_rule </span>
+                <!-- </div> -->
+
+                <div>
+                    <input type="text" placeholder="Description">
+                </div>
+
+                <div>
+                    <input type="datetime-local" placeholder="Date">
+                </div>
+
+                <div>
+                    <label for="">Remember me</label>
+                    <button class="checked">
+                        <span class="material-symbols-outlined"> check_circle </span>
+                    </button>
+                </div>
+
+                <div class="modal-btns-container">
+                    <button class="modal-btn bg-indigo">Add</button>
+                    <button class="modal-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="module" src="src/scripts/main.js"></script>
 </body>
 
 </html>

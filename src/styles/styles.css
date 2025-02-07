@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url(navbar.css);
 @import url(main.css);
 
@@ -6,72 +7,199 @@
   padding: 0;
   box-sizing: border-box;
 
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 1rem;
-}
-
-.container {
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
-.padding-vertical {
-  padding: clamp(40px, 10%, 80px) 0;
+  /* font-variation-settings: "wdth" 100; */
+  /* font-size: 1rem; */
+  color: #1d1b1e;
 }
 
 p {
   font-size: 1rem;
   font-weight: 400;
+  line-height: 1.25rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
   line-height: 1.5rem;
 }
 
-h1 {
-  font-size: 2.625rem;
+.container-main {
+  position: relative;
+  max-width: 428px;
+  height: 926px;
+  margin: 0 auto;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  /* border: solid 1px red; */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e6e2e9;
+  border-radius: 16px;
+}
+.search-bar > input {
+  width: 100%;
+  margin: 8px 16px;
+  background-color: #e6e2e9;
+  border: none;
+}
+.search-bar > span {
+  margin: 8px;
+  color: #4f4549;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  border-radius: 16px;
+  border: solid 1px #beb7bc;
+}
+.filter-bar > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.filter-bar > div > * {
+  font-size: 0.875rem;
+  margin: 8px 0;
+}
+.filter-bar > .left {
+  border: none;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+.filter-bar > .middle {
+  border: solid 1px #beb7bc;
+  border-top: none;
+  border-bottom: none;
+}
+.filter-bar > .right {
+  border: none;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.filter-active {
+  background-color: #e8def8;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tasks > h3 {
+  margin: 8px;
+}
+
+.card {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f2fa;
+  border-radius: 16px;
+}
+.card > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card > div > input {
+  margin: 8px;
+  width: 16px;
+  height: 16px;
+}
+.card > div > div > p {
+  font-size: 0.875rem;
+}
+.card.finished > * {
+  opacity: 30%;
+}
+.card.finished > div > div :nth-child(2) {
+  text-decoration: line-through;
+}
+
+.btn-edit {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+
+  width: 56px;
+  height: 56px;
+  background-color: #ebdef7;
+
+  box-shadow: -0.1em -0.1em 1em rgba(133, 123, 123, 0.6);
+
+  border-radius: 16px;
+  border: none;
+}
+
+.container-modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 8px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.modal > span {
+  font-size: 2.2rem;
   font-weight: 700;
-  line-height: 3.25rem;
+  color: #79747E;
 }
 
-@media (max-width: 1400px) {
-  * {
-    /* font-size: 16px; */
-  }
+.modal > div {
+  width: 100%;
+  max-width: 95%;
+  display: flex;
+  justify-content: space-between;
 }
 
-@media (max-width: 1200px) {
-  * {
-    /* font-size: 16px; */
-  }
+.modal > div > input {
+  width: 100%;
+  padding: 8px;
+  border: solid 1px #79747E;
 }
-@media (max-width: 992px) {
-  * {
-    /* font-size: 16px; */
-  }
+.modal-btns-container {
+  justify-content: flex-end !important;
+  gap: 8px;
 }
-
-@media (max-width: 768px) {
-  * {
-    /* font-size: 16px; */
-  }
+.modal-btn {
+  width: 120px;
+  height: 40px;
+  border-radius: 16px;
+  border: solid 1px #6750A4;
+  color: #6750A4;
 }
-@media (max-width: 576px) {
-  * {
-    /* font-size: 0.85rem; */
-  }
-  h1 {
-    font-size: 1.5rem;
-    /* font-weight: 700; */
-    line-height: 1.9rem;
-  }
-  p {
-    font-size: 0.75rem;
-    /* font-weight: 400; */
-    /* line-height: 1.5rem; */
-  }
-}
-@media (max-width: 390px) {
-  * {
-    /* font-size: 12px; */
-  }
+.bg-indigo {
+  color: #ffffff;
+  background-color: #6750A4;
 }
