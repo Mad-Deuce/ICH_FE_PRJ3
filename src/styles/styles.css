@@ -53,12 +53,7 @@ h3 {
   background-color: #e6e2e9;
   border: none;
 }
-.search-bar > button {
-  background-color: #e6e2e9;
-  border: none;
-  border-radius: 16px;
-}
-.search-bar > button > span {
+.search-bar > span {
   margin: 8px;
   color: #4f4549;
 }

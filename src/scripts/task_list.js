@@ -43,8 +43,7 @@ function taskListEventHandler(event) {
     if (cl.some(i => i === 'card-cbx')) {
         setActiveTaskById(taskId, targetElem.checked);
     }
-    
-    fillTaskList(readTasks());
 
+    fillTaskList(readTasks());
 }
 
