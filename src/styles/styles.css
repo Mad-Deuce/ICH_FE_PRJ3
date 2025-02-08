@@ -53,7 +53,7 @@ h3 {
   background-color: #e6e2e9;
   border: none;
 }
-.search-bar > button  {
+.search-bar > button {
   background-color: #e6e2e9;
   border: none;
   border-radius: 16px;
@@ -130,13 +130,19 @@ h3 {
 .card > div > div > p {
   font-size: 0.875rem;
 }
-.card > button {
-  border: none;
+.card  > span {
+  margin: 0 8px;
 }
+
+.card-remove:hover {
+  color: red;
+  cursor: pointer;
+}
+
 .card.finished > * {
   opacity: 30%;
 }
-.card.finished > div > div :nth-child(2) {
+.card.finished > div > .desc {
   text-decoration: line-through;
 }
 
@@ -166,7 +172,7 @@ h3 {
 }
 .modal {
   position: absolute;
-  
+
   left: 0;
   bottom: 0;
   width: 100%;
@@ -182,7 +188,7 @@ h3 {
 .modal > span {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #79747E;
+  color: #79747e;
 }
 
 .modal > div {
@@ -195,7 +201,7 @@ h3 {
 .modal > div > input {
   width: 100%;
   padding: 8px;
-  border: solid 1px #79747E;
+  border: solid 1px #79747e;
 }
 .modal-btns-container {
   justify-content: flex-end !important;
@@ -205,12 +211,12 @@ h3 {
   width: 120px;
   height: 40px;
   border-radius: 16px;
-  border: solid 1px #6750A4;
-  color: #6750A4;
+  border: solid 1px #6750a4;
+  color: #6750a4;
 }
 .bg-indigo {
   color: #ffffff;
-  background-color: #6750A4;
+  background-color: #6750a4;
 }
 
 .hidden {
