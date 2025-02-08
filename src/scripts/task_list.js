@@ -1,4 +1,4 @@
-import { readTasks, removeTaskById } from './storage'
+import { readTasks, removeTaskById, setActiveTaskById } from './storage'
 
 
 fillTaskList();
@@ -39,8 +39,13 @@ function taskListEventHandler(event) {
     let cl = Array.from(targetElem.classList);
 
     if (cl.some(i => i === 'card-remove')) {
-        console.log('remove card ', taskId);
         removeTaskById(taskId);
+        fillTaskList();
+    }
+
+    if (cl.some(i => i === 'card-cbx')) {
+        console.log('remove card ', taskId);
+        setActiveTaskById(taskId, targetElem.checked);
         fillTaskList();
     }
 

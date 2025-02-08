@@ -43,4 +43,13 @@ export function removeTaskById(id) {
     writeAll(todoList);
 }
 
+export function setActiveTaskById(id, isActive) {
+    let todoList = readAll();
+    let tasks = Array.isArray(todoList[TASKS_KEY]) ? todoList[TASKS_KEY] : [];
+    let task = tasks.find(item => item.id == id);
+    task.active = isActive;
+    todoList[TASKS_KEY] = tasks;
+    writeAll(todoList);
+}
+
 
