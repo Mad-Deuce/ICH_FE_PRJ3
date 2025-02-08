@@ -7,8 +7,8 @@ const LAST_TASK_KEY = 'last_task';
 function readAll() {
     return JSON.parse(storage.getItem(KEY)) ?? {};
 };
-function readTasks() {
-    let res = JSON.parse(storage.getItem(KEY)[TASKS_KEY]);
+export function readTasks() {
+    let res = JSON.parse(storage.getItem(KEY))[TASKS_KEY];
     return Array.isArray(res) ? res : [];
 };
 export function readLastTask() {
