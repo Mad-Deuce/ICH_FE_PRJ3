@@ -31,7 +31,7 @@ h3 {
 .container-main {
   position: relative;
   max-width: 428px;
-  height: 926px;
+  height: 100vh;
   margin: 0 auto;
   padding: 16px 8px;
   display: flex;
@@ -118,13 +118,14 @@ h3 {
   align-items: center;
   gap: 8px;
 }
-.card > div > input {
+.card > div > md-checkbox {
   margin: 8px;
-  width: 16px;
-  height: 16px;
 }
 .card > div > div > p {
   font-size: 0.875rem;
+}
+.card > button {
+  border: none;
 }
 .card.finished > * {
   opacity: 30%;
@@ -150,6 +151,7 @@ h3 {
 
 .container-modal {
   position: absolute;
+  z-index: 1000;
   width: 100%;
   height: 100%;
   top: 0;
@@ -158,6 +160,7 @@ h3 {
 }
 .modal {
   position: absolute;
+  
   left: 0;
   bottom: 0;
   width: 100%;
