@@ -1,5 +1,6 @@
 import { removeTaskById, setActiveTaskById } from './storage';
 import { updateTaskList } from './main';
+import moment from 'moment';
 
 const taskListElem = document.querySelector('#task-list');
 taskListElem.addEventListener('click', event => taskListEventHandler(event));
@@ -15,7 +16,7 @@ export function fillTaskList(tasks) {
                     <div>
                         <md-checkbox class="card-cbx" touch-target="wrapper" ${item.active ? '' : 'checked'} task-id="${item.id}"></md-checkbox>
                         <div>
-                            <p>${item.date}</p>
+                            <p>${moment(item.date).format("MMM D, hh:mm")}</p>
                             <p class="desc">${item.desc}</p>
                         </div>
                     </div>
