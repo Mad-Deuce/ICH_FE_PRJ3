@@ -13,7 +13,7 @@ editBtn.addEventListener('click', () => {
     modal.classList.remove('hidden');
     editBtn.classList.add('hidden');
 
-    let lastTask = readLastlastTask();
+    let lastTask = readLastTask();
     descInp.value = lastTask.desc ?? "";
     dataInp.value = lastTask.date;
 });
