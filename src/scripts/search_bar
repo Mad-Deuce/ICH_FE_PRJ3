@@ -1,0 +1,16 @@
+import { readStorage } from './storage.js';
+
+const filteredTaskList = Array.isArray(readStorage('tasks')) ? readStorage('tasks') : [];
+
+const searchBarElem = document.querySelector('.search-bar');
+const searchInpElem = searchBarElem.querySelector('input');
+const searchBtnElem = searchBarElem.querySelector('button');
+
+
+searchBtnElem.addEventListener('click', () => {
+    if (searchInpElem || searchInpElem.value === "") {
+        return;
+    };
+    
+    
+});

@@ -12,8 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "vite": "^6.1.0"
+  
   },
   "dependencies": {
-    "@material/web": "^2.2.0"
+    "@material/web": "^2.2.0",
+    "moment": "^2.30.1"
   }
 }

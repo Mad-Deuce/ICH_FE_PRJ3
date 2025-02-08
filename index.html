@@ -14,27 +14,29 @@
 
 <body>
     <div class="container-main">
-        <div>
+        <div class="date-bar">
             <h3>Wednesday</h3>
             <p>january 3</p>
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Search">
-            <span class="material-symbols-outlined"> search </span>
+            <button>
+                <span class="material-symbols-outlined"> search </span>
+            </button>
         </div>
         <div class="filter-bar">
-            <div class="filter-active left">
+            <button class="filter-active left">
                 <span class="material-symbols-outlined"> check </span>
                 <p>All</p>
-            </div>
-            <div class="middle">
+            </button>
+            <button class="middle">
                 <span class="material-symbols-outlined"> check </span>
                 <p>Active</p>
-            </div>
-            <div class="right">
+            </button>
+            <button class="right">
                 <span class="material-symbols-outlined"> check </span>
                 <p>Finished</p>
-            </div>
+            </button>
         </div>
         <div class="tasks">
             <h3>Tasks list</h3>
@@ -50,12 +52,12 @@
                 <button>
                     <span class="material-symbols-outlined"> delete </span>
                 </button>
-                
+
             </div>
 
             <div class="card">
                 <div>
-                    <md-checkbox touch-target="wrapper" ></md-checkbox>
+                    <md-checkbox touch-target="wrapper"></md-checkbox>
                     <div>
                         <p>10 января, 11:30</p>
                         <p>Покормить кошку</p>
@@ -68,32 +70,30 @@
 
         </div>
 
-        <button class="btn-edit">
+        <button class="btn-edit" id="btn-edit">
             <span class="material-symbols-outlined"> edit </span>
         </button>
 
-        <div class="container-modal">
+        <div class="container-modal hidden" id="container-modal">
             <div class="modal">
-                <!-- <div> -->
-                    <span class="material-symbols-outlined"> horizontal_rule </span>
-                <!-- </div> -->
+                <span class="material-symbols-outlined"> horizontal_rule </span>
 
                 <div>
-                    <input type="text" placeholder="Description">
+                    <input type="text" placeholder="Description" id="inp-desc">
                 </div>
 
                 <div>
-                    <input type="datetime-local" placeholder="Date">
+                    <input type="datetime-local" placeholder="Date" id="inp-date">
                 </div>
 
                 <div>
                     <label for="">Remember me</label>
-                    <md-switch icons></md-switch>
+                    <md-switch icons id="remember-cbx"></md-switch>
                 </div>
 
                 <div class="modal-btns-container">
-                    <button class="modal-btn bg-indigo">Add</button>
-                    <button class="modal-btn">Cancel</button>
+                    <button class="modal-btn bg-indigo" id="btn-add">Add</button>
+                    <button class="modal-btn" id="btn-cancel">Close</button>
                 </div>
             </div>
         </div>
