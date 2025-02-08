@@ -1,5 +1,5 @@
 import { writeTask, writeLastTask, readLastTask } from './storage.js';
-import { fillTaskList } from './task_list.js';
+import { updateTaskList } from './main';
 
 const editBtn = document.querySelector('#btn-edit');
 const modal = document.querySelector('#container-modal');
@@ -33,7 +33,7 @@ addBtn.addEventListener('click', () => {
     };
     writeTask(task);
     if (rememberCbx.selected) writeLastTask(task);
-    fillTaskList();
+    updateTaskList();
 });
 
 

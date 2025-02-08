@@ -17,7 +17,4 @@ https://www.figma.com/design/h7ecVRqH6mqrf2JYkCyb0C/To-do-list-(Community)?node-
 ● Реализовать операции получения, создания и удаления элементов.
 ● Организовать хранение элементов с помощью localStorage.
 
-
-
-
 https://github.com/material-components/material-web/blob/main/docs/components/switch.md
