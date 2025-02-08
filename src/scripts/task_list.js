@@ -1,14 +1,13 @@
 import { readTasks, removeTaskById, setActiveTaskById } from './storage'
 
+const taskListElem = document.querySelector('#task-list');
+taskListElem.addEventListener('click', event => taskListEventHandler(event));
+fillTaskList(readTasks());
 
-fillTaskList();
-
-export function fillTaskList() {
-    let tasks = readTasks();
-
-    const taskListElem = document.querySelector('#task-list');
+export function fillTaskList(tasks) {
     taskListElem.innerHTML = '';
 
+    // let tasks = readTasks();
     tasks.forEach(item => {
         if (item.id) {
             let taskCard = document.createElement('div');
@@ -27,7 +26,6 @@ export function fillTaskList() {
             taskListElem.appendChild(taskCard);
         }
     });
-    taskListElem.addEventListener('click', event => taskListEventHandler(event));
 };
 
 function taskListEventHandler(event) {
@@ -40,15 +38,13 @@ function taskListEventHandler(event) {
 
     if (cl.some(i => i === 'card-remove')) {
         removeTaskById(taskId);
-        fillTaskList();
     }
 
     if (cl.some(i => i === 'card-cbx')) {
-        console.log('remove card ', taskId);
         setActiveTaskById(taskId, targetElem.checked);
-        fillTaskList();
     }
-
+    
+    fillTaskList(readTasks());
 
 }
 
