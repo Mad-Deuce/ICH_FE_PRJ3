@@ -25,5 +25,6 @@ export function updateTaskList() {
     let filterPredicate = getFilterPredicate();
     taskList = taskList.filter(filterPredicate);
 
+    taskList = taskList.sort((a, b) => new Date(a.date) - new Date(b.date));
     fillTaskList(taskList);
 };
