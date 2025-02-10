@@ -36,32 +36,9 @@
                 <p>Finished</p>
             </button>
         </div>
+        
         <h3>Task list</h3>
-        <div class="tasks" id="task-list">
-            <div class="card finished">
-                <div>
-                    <md-checkbox touch-target="wrapper" checked></md-checkbox>
-                    <div>
-                        <p>10 января, 11:30</p>
-                        <p>Покормить кошку</p>
-                    </div>
-                </div>
-                <span class="material-symbols-outlined"> delete </span>
-
-            </div>
-
-            <div class="card">
-                <div>
-                    <md-checkbox touch-target="wrapper"></md-checkbox>
-                    <div>
-                        <p>10 января, 11:30</p>
-                        <p>Покормить кошку</p>
-                    </div>
-                </div>
-                <span class="material-symbols-outlined"> delete </span>
-            </div>
-
-        </div>
+        <div class="tasks" id="task-list"></div>
 
         <button class="btn-edit" id="btn-edit">
             <span class="material-symbols-outlined"> edit </span>
@@ -93,6 +70,25 @@
 
 
     </div>
+
+
+    <script type="text/template" id="template-task">
+            <% _.each(tasks, function(item) { %>
+
+                <div class="<%= item.active  %>">
+                    <div>
+                        <md-checkbox class="card-cbx" touch-target="wrapper" <%- item.checked %>
+                            task-id="<%= item.id %>"></md-checkbox>
+                        <div>
+                            <p class="card-date"><%= item.date %></p>
+                            <p class="desc"><%= item.desc %></p>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined card-remove" task-id="<%= item.id %>"> delete </span>
+                </div>
+
+            <% }); %>
+    </script>
 
     <script type="module" src="src/scripts/main.js"></script>
 </body>

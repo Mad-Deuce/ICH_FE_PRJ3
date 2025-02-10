@@ -1,11 +1,14 @@
 import { removeTaskById, setActiveTaskById } from './storage';
 import { updateTaskList } from './main';
 import moment from 'moment';
+import _, { map } from 'underscore';
 
 const taskListElem = document.querySelector('#task-list');
 taskListElem.addEventListener('click', event => taskListEventHandler(event));
 
-export function fillTaskList(tasks) {
+
+// Deprecate function
+export function fillTaskList2(tasks) {
     taskListElem.innerHTML = '';
 
     tasks.forEach(item => {
@@ -28,9 +31,30 @@ export function fillTaskList(tasks) {
     });
 };
 
+
+export function fillTaskList(tasks) {
+    tasks.map(item => item.date = moment(item.date).format("MMM D, hh:mm"));
+    tasks.map(item => item.active = item.active ? 'card' : 'card finished');
+    tasks.map(item => item.checked = item.active ? 'checked' : '');
+    const wrap = {};
+    wrap.tasks = tasks;
+
+    console.log(wrap);
+    
+
+    const template = _.template(document.querySelector('#template-task').innerHTML);
+    const structure = template(wrap);
+    taskListElem.innerHTML = structure;
+};
+
+
+
 function taskListEventHandler(event) {
 
     let targetElem = event.target;
+    console.log(targetElem.checked);
+    console.log(targetElem);
+
     if (!targetElem.getAttribute('task-id')) return;
 
     let taskId = targetElem.getAttribute('task-id');
@@ -41,8 +65,12 @@ function taskListEventHandler(event) {
     };
 
     if (cl.some(i => i === 'card-cbx')) {
+        console.log(taskId);
+
         setActiveTaskById(taskId, targetElem.checked);
     };
     updateTaskList();
 };
+
+
 
