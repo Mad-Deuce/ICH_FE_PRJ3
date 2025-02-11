@@ -15,8 +15,6 @@ import { readTasks } from './storage.js'
 updateTaskList();
 
 export function updateTaskList() {
-    console.log('update');
-
     let taskList = readTasks();
 
     let searchPredicate = getSearchPredicate();

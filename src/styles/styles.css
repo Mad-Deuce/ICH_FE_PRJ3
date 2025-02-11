@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-
 * {
   margin: 0;
   padding: 0;
@@ -124,7 +123,7 @@ h3 {
 .card > div > div > p {
   font-size: 0.875rem;
 }
-.card  > span {
+.card > span {
   margin: 0 8px;
 }
 
@@ -160,6 +159,7 @@ h3 {
   width: 100%;
   height: 100%;
   top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.3);
 }
 .modal {
