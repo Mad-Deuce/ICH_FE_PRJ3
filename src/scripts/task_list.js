@@ -16,7 +16,7 @@ export function fillTaskList(tasks) {
                     <div>
                         <md-checkbox class="card-cbx" touch-target="wrapper" ${item.active ? '' : 'checked'} task-id="${item.id}"></md-checkbox>
                         <div>
-                            <p>${moment(item.date).format("MMM D, hh:mm")}</p>
+                            <p>${moment(item.date).format("MMM D, HH:mm")}</p>
                             <p class="desc">${item.desc}</p>
                         </div>
                     </div>
