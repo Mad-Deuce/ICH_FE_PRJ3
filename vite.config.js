@@ -4,5 +4,6 @@ export default {
     server:{
         port: 3000,
         open: 'index.html',
+        // base: "./",
     }
 }

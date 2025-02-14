@@ -1,5 +1,6 @@
-import { writeTask, writeLastTask, readLastTask } from './storage.js';
+import { writeTask, writeLastTask, readLastTask, setActiveTaskById } from './storage.js';
 import { updateTaskList } from './main';
+import moment from 'moment';
 
 const editBtn = document.querySelector('#btn-edit');
 const modal = document.querySelector('#container-modal');
@@ -32,8 +33,35 @@ addBtn.addEventListener('click', () => {
         "active": true
     };
     writeTask(task);
-    if (rememberCbx.selected) writeLastTask(task);
+    if (rememberCbx.selected) {
+        writeLastTask(task);
+    }
     updateTaskList();
 });
+
+
+
+export function checkTask() {
+    let i = 0;
+    let intId = setInterval(() => {
+        let task = readLastTask();
+        if (task.active) {
+            if (new Date() > new Date(task.date)) {
+                const n = new Notification(`Time to do task - ${task.desc} - ${moment(task.date).format("MMM D, HH:mm")} - ${i}`);
+
+                if (i > 3) {
+                    clearInterval(intId);
+                };
+                i++;
+
+            };
+
+        };
+
+
+
+    }, 3000);
+
+};
 
 

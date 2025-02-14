@@ -24,11 +24,11 @@ export function fillTaskList(tasks) {
                 </div>
             `;
             taskListElem.appendChild(taskCard);
-        }
+        };
     });
 };
 
-function taskListEventHandler(event) {
+export function taskListEventHandler(event) {
 
     let targetElem = event.target;
     if (!targetElem.getAttribute('task-id')) return;
