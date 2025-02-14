@@ -18,3 +18,10 @@ https://www.figma.com/design/h7ecVRqH6mqrf2JYkCyb0C/To-do-list-(Community)?node-
 ● Организовать хранение элементов с помощью localStorage.
 
 https://github.com/material-components/material-web/blob/main/docs/components/switch.md
+
+Дополнительные функции
+● Отслеживание задач - отслеживание активных задач (active:true), у которых дата меньше чем текущая 
+    и установлен маркер notificate:true ( при создании задачи включен переключатель "Remind me").
+    При наличии таких задач, каждые 3 секунды отображается PUSH уведомление.
+    После 3-х уведомлений, отслеживание прекращается.
+
