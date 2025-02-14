@@ -49,7 +49,7 @@ export function checkTask() {
             taskList.forEach(task => {
                 notificationBody = notificationBody.concat(`${task.id} - ${task.desc} - ${moment(task.date).format("MMM D, HH:mm")}; \n`);
             });
-            const notification = new Notification(notificationTitle + `. Reminder-${i}`, { body: notificationBody });
+            const notification = new Notification(notificationTitle + `. Reminder-${i}`, { body: notificationBody, silent: true });
             i++;
         };
     }, 3000);
