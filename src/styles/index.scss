@@ -1,0 +1,192 @@
+@use "reset";
+@use "variables" as var;
+@use "mixins" as mix;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+.container-main {
+  position: relative;
+  max-width: 1296px;
+  height: 100vh;
+  overflow-y: hidden;
+  margin: 0 auto;
+  padding: 16px 8px 80px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-bar {
+  @include mix.flex-align-center;
+  justify-content: space-between;
+  background-color: var.$search-bar-bgd;
+  border-radius: var.$brd-radius;
+  & > input {
+    width: 100%;
+    margin: 8px 16px;
+    background-color: var.$search-bar-bgd;
+    border: none;
+  }
+
+  & > span {
+    margin: 8px;
+    color: #4f4549;
+  }
+}
+
+.filter-bar {
+  @include mix.flex-align-center;
+  justify-content: stretch;
+  border-radius: var.$brd-radius;
+  border: solid 1px var.$filter-bar-bgd;
+  button {
+    @include mix.flex-align-center;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+
+    * {
+      font-size: 0.875rem;
+      margin: 8px 0;
+    }
+
+    &.filter-active > span {
+      display: block;
+    }
+  }
+
+  span {
+    display: none;
+  }
+  .left {
+    border: none;
+    border-top-left-radius: var.$brd-radius;
+    border-bottom-left-radius: var.$brd-radius;
+  }
+  .middle {
+    border: solid 1px var.$filter-bar-bgd;
+    border-top: none;
+    border-bottom: none;
+  }
+  .right {
+    border: none;
+    border-top-right-radius: var.$brd-radius;
+    border-bottom-right-radius: var.$brd-radius;
+  }
+}
+
+.filter-active {
+  background-color: var.$filter-bar-bgd-active;
+}
+
+.tasks {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card {
+  padding: 8px;
+  @include mix.flex-align-center;
+  justify-content: space-between;
+  background-color: var.$card-bgd;
+  border-radius: var.$brd-radius;
+
+  & > div {
+    @include mix.flex-align-center;
+    gap: 8px;
+  }
+
+  md-checkbox {
+    margin: 8px;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+
+  span {
+    margin: 0 8px;
+  }
+  span:hover {
+    color: var.$card-trash-clr-hover;
+    cursor: pointer;
+  }
+
+  &.finished > * {
+    opacity: 30%;
+  }
+  &.finished .desc {
+    text-decoration: line-through;
+  }
+}
+
+.btn-edit {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  @include mix.modal-btn;
+}
+
+.container-modal {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var.$container-modal-bgd;
+}
+.modal {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 8px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  background-color: white;
+  @include mix.flex-align-center;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+.modal > span {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var.$modal-color;
+}
+
+.modal > div {
+  width: 100%;
+  max-width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal > div > input {
+  width: 100%;
+  padding: 8px;
+  border: solid 1px var.$modal-color;
+}
+.modal-btns-container {
+  justify-content: flex-end !important;
+  gap: 8px;
+}
+.modal-btn {
+  width: 120px;
+  height: 40px;
+  border-radius: var.$brd-radius;
+}
+
+.btn-dark-theme {
+  @include mix.dark-theme;
+}
+.btn-light-theme {
+  @include mix.light-theme;
+}
+
+.hidden {
+  display: none;
+}

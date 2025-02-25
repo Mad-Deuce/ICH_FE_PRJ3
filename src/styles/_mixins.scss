@@ -1,0 +1,26 @@
+@mixin dark-theme {
+  color: #ffffff;
+  background-color: #6750a4;
+  border: solid 1px #6750a4;
+}
+@mixin light-theme {
+  color: #6750a4;
+  background-color: #ffffff;
+  border: solid 1px #6750a4;
+}
+
+@mixin modal-btn {
+  width: 56px;
+  height: 56px;
+  background-color: #ebdef7;
+
+  box-shadow: -0.1em -0.1em 1em rgba(133, 123, 123, 0.6);
+
+  border-radius: 16px;
+  border: none;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}

@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   font-family: "Open Sans", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -62,41 +60,43 @@ h3 {
   border-radius: 16px;
   border: solid 1px #beb7bc;
 }
-.filter-bar > button {
-  width: 100%;
+.filter-bar button {
   display: flex;
-  justify-content: center;
   align-items: center;
+  width: 100%;
+  justify-content: center;
   gap: 8px;
 }
-.filter-bar > button > span {
-  display: none;
-}
-.filter-bar > button > * {
+.filter-bar button * {
   font-size: 0.875rem;
   margin: 8px 0;
 }
-.filter-bar > .left {
+.filter-bar button.filter-active > span {
+  display: block;
+}
+.filter-bar span {
+  display: none;
+}
+.filter-bar .left {
   border: none;
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
 }
-.filter-bar > .middle {
+.filter-bar .middle {
   border: solid 1px #beb7bc;
   border-top: none;
   border-bottom: none;
 }
-.filter-bar > .right {
+.filter-bar .right {
   border: none;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
 }
+
 .filter-active {
   background-color: #e8def8;
 }
-.filter-bar > button.filter-active > span {
-  display: block;
-}
+
 .tasks {
   overflow-y: auto;
   display: flex;
@@ -107,8 +107,8 @@ h3 {
 .card {
   padding: 8px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background-color: #f7f2fa;
   border-radius: 16px;
 }
@@ -117,25 +117,23 @@ h3 {
   align-items: center;
   gap: 8px;
 }
-.card > div > md-checkbox {
+.card md-checkbox {
   margin: 8px;
 }
-.card > div > div > p {
+.card p {
   font-size: 0.875rem;
 }
-.card > span {
+.card span {
   margin: 0 8px;
 }
-
-.card-remove:hover {
-  color: red;
+.card span:hover {
+  color: #ff0000;
   cursor: pointer;
 }
-
 .card.finished > * {
   opacity: 30%;
 }
-.card.finished > div > .desc {
+.card.finished .desc {
   text-decoration: line-through;
 }
 
@@ -146,9 +144,7 @@ h3 {
   width: 56px;
   height: 56px;
   background-color: #ebdef7;
-
   box-shadow: -0.1em -0.1em 1em rgba(133, 123, 123, 0.6);
-
   border-radius: 16px;
   border: none;
 }
@@ -162,9 +158,9 @@ h3 {
   left: 0;
   background-color: rgba(0, 0, 0, 0.3);
 }
+
 .modal {
   position: absolute;
-
   left: 0;
   bottom: 0;
   width: 100%;
@@ -173,10 +169,11 @@ h3 {
   border-top-right-radius: 32px;
   background-color: white;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 10px;
 }
+
 .modal > span {
   font-size: 2.2rem;
   font-weight: 700;
@@ -195,22 +192,32 @@ h3 {
   padding: 8px;
   border: solid 1px #79747e;
 }
+
 .modal-btns-container {
   justify-content: flex-end !important;
   gap: 8px;
 }
+
 .modal-btn {
   width: 120px;
   height: 40px;
   border-radius: 16px;
-  border: solid 1px #6750a4;
-  color: #6750a4;
 }
-.bg-indigo {
+
+.btn-dark-theme {
   color: #ffffff;
   background-color: #6750a4;
+  border: solid 1px #6750a4;
+}
+
+.btn-light-theme {
+  color: #6750a4;
+  background-color: #ffffff;
+  border: solid 1px #6750a4;
 }
 
 .hidden {
   display: none;
 }
+
+/*# sourceMappingURL=styles.css.map */
