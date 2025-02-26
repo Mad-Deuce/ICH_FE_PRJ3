@@ -1,9 +1,27 @@
-$search-bar-bgd: #e6e2e9;
-$filter-bar-bgd: #beb7bc;
-$filter-bar-bgd-active: #e8def8;
-$card-bgd: #f7f2fa;
-$card-trash-clr-hover: #ff0000;
-$container-modal-bgd: rgba(0, 0, 0, 0.3);
-$modal-color: #79747e;
+@use "sass:color";
 
+// colors -----------------------------------------------------------------------------------------
+$dark: #6750a4;
+$light: #ffffff;
+
+$btn-edit-bgd: color.scale($dark, $lightness: 80%);
+$btn-edit-bgd-hover: color.scale($dark, $lightness: 70%);
+
+$search-bar-bgd: color.scale($dark, $lightness: 90%);
+$search-bar-bgd-hover: color.scale($dark, $lightness: 85%);
+
+$filter-bar-brd: color.scale($dark, $lightness: 55%);
+$filter-bar-bgd: color.scale($dark, $lightness: 95%);
+$filter-bar-bgd-hover: color.scale($dark, $lightness: 85%);
+$filter-bar-bgd-active: color.scale($dark, $lightness: 75%);
+
+$card-bgd: color.scale($dark, $lightness: 92%);
+$card-bgd-hover: color.scale($dark, $lightness: 85%);
+$card-trash-clr-hover: #ff0000;
+
+$modal-clr: color.scale($dark, $lightness: 65%);
+
+$container-modal-bgd: rgba(0, 0, 0, 0.3);
+
+// sizes & radiuses -------------------------------------------------------------------------------
 $brd-radius: 16px;

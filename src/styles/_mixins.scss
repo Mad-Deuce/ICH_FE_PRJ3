@@ -1,23 +1,30 @@
+@use "variables" as var;
+
+
 @mixin dark-theme {
-  color: #ffffff;
-  background-color: #6750a4;
-  border: solid 1px #6750a4;
+  color: var.$light;
+  background-color: var.$dark;
+  border: solid 1px var.$dark;
 }
 @mixin light-theme {
-  color: #6750a4;
-  background-color: #ffffff;
-  border: solid 1px #6750a4;
+  color: var.$dark;
+  background-color: var.$light;
+  border: solid 1px var.$dark;
 }
 
-@mixin modal-btn {
+@mixin btn-edit {
   width: 56px;
   height: 56px;
-  background-color: #ebdef7;
+  background-color: var.$btn-edit-bgd;
 
   box-shadow: -0.1em -0.1em 1em rgba(133, 123, 123, 0.6);
 
   border-radius: 16px;
   border: none;
+  &:hover {
+    background-color: var.$btn-edit-bgd-hover;
+    cursor: pointer;
+  }
 }
 
 @mixin flex-align-center {

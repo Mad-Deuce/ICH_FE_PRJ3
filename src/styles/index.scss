@@ -21,16 +21,27 @@
   justify-content: space-between;
   background-color: var.$search-bar-bgd;
   border-radius: var.$brd-radius;
-  & > input {
+  input {
     width: 100%;
     margin: 8px 16px;
     background-color: var.$search-bar-bgd;
     border: none;
+    outline: none;
   }
 
-  & > span {
+  span {
     margin: 8px;
     color: #4f4549;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &:hover {
+    background-color: var.$search-bar-bgd-hover;
+    input {
+      background-color: var.$search-bar-bgd-hover;
+      // border: none;
+    }
   }
 }
 
@@ -38,7 +49,7 @@
   @include mix.flex-align-center;
   justify-content: stretch;
   border-radius: var.$brd-radius;
-  border: solid 1px var.$filter-bar-bgd;
+  border: solid 1px var.$filter-bar-brd;
   button {
     @include mix.flex-align-center;
     width: 100%;
@@ -62,21 +73,41 @@
     border: none;
     border-top-left-radius: var.$brd-radius;
     border-bottom-left-radius: var.$brd-radius;
+    background-color: var.$filter-bar-bgd;
+    &.filter-active {
+      background-color: var.$filter-bar-bgd-active;
+    }
+    &:hover {
+      background-color: var.$filter-bar-bgd-hover;
+      cursor: pointer;
+    }
   }
   .middle {
-    border: solid 1px var.$filter-bar-bgd;
+    border: solid 1px var.$filter-bar-brd;
     border-top: none;
     border-bottom: none;
+    background-color: var.$filter-bar-bgd;
+    &.filter-active {
+      background-color: var.$filter-bar-bgd-active;
+    }
+    &:hover {
+      background-color: var.$filter-bar-bgd-hover;
+      cursor: pointer;
+    }
   }
   .right {
     border: none;
     border-top-right-radius: var.$brd-radius;
     border-bottom-right-radius: var.$brd-radius;
+    background-color: var.$filter-bar-bgd;
+    &.filter-active {
+      background-color: var.$filter-bar-bgd-active;
+    }
+    &:hover {
+      background-color: var.$filter-bar-bgd-hover;
+      cursor: pointer;
+    }
   }
-}
-
-.filter-active {
-  background-color: var.$filter-bar-bgd-active;
 }
 
 .tasks {
@@ -119,13 +150,16 @@
   &.finished .desc {
     text-decoration: line-through;
   }
+  &:hover {
+    background-color: var.$card-bgd-hover;
+  }
 }
 
 .btn-edit {
   position: absolute;
   bottom: 8px;
   right: 8px;
-  @include mix.modal-btn;
+  @include mix.btn-edit;
 }
 
 .container-modal {
@@ -150,34 +184,33 @@
   @include mix.flex-align-center;
   flex-direction: column;
   gap: 10px;
-  
-}
-.modal > span {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var.$modal-color;
-}
 
-.modal > div {
-  width: 100%;
-  max-width: 95%;
-  display: flex;
-  justify-content: space-between;
-}
+  span {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var.$modal-clr;
+  }
+  div {
+    width: 100%;
+    max-width: 95%;
+    display: flex;
+    justify-content: space-between;
+  }
+  input {
+    width: 100%;
+    padding: 8px;
+    border: solid 1px var.$modal-clr;
+  }
 
-.modal > div > input {
-  width: 100%;
-  padding: 8px;
-  border: solid 1px var.$modal-color;
-}
-.modal-btns-container {
-  justify-content: flex-end !important;
-  gap: 8px;
-}
-.modal-btn {
-  width: 120px;
-  height: 40px;
-  border-radius: var.$brd-radius;
+  .modal-btns-container {
+    justify-content: flex-end !important;
+    gap: 8px;
+    .modal-btn {
+      width: 120px;
+      height: 40px;
+      border-radius: var.$brd-radius;
+    }
+  }
 }
 
 .btn-dark-theme {
