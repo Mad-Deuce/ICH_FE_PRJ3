@@ -11,6 +11,18 @@ export function readTasks() {
     let res = JSON.parse(storage.getItem(KEY))[TASKS_KEY];
     return Array.isArray(res) ? res : [];
 };
+export function readTasksAsync() {
+
+    return new Promise((resolve, reject) => {
+        resolve(JSON.parse(storage.getItem(KEY))[TASKS_KEY]);
+    });
+
+
+    // let res = JSON.parse(storage.getItem(KEY))[TASKS_KEY];
+    // return Array.isArray(res) ? res : [];
+};
+
+
 
 function writeAll(v) {
     storage.setItem(KEY, JSON.stringify(v));

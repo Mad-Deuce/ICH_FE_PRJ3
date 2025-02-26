@@ -10,15 +10,16 @@ import './filter_bar.js';
 import { getSearchPredicate } from './search_bar.js';
 import { getFilterPredicate } from './filter_bar.js';
 import { fillTaskList } from './task_list.js';
-import { readTasks } from './storage.js';
+import { readTasks, readTasksAsync } from './storage.js';
 import { checkTask } from './modal.js';
 
 updateTaskList();
 checkTask();
 
-export function updateTaskList() {
-    let taskList = readTasks();
-
+export async function updateTaskList() {
+    // let taskList = readTasks();
+    let taskList = await readTasksAsync();
+    
     let searchPredicate = getSearchPredicate();
     taskList = taskList.filter(searchPredicate);
 
