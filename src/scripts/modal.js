@@ -1,4 +1,4 @@
-import { writeTask, readTasks, } from './storage.js';
+import { writeTask,  readTasksAsync} from './storage.js';
 import { updateTaskList } from './main';
 import moment from 'moment';
 
@@ -33,10 +33,11 @@ addBtn.addEventListener('click', () => {
     updateTaskList();
 });
 
-export function checkTask() {
+export  function checkTask() {
     let i = 1;
-    let intId = setInterval(() => {
-        let taskList = readTasks().filter(task => task.notificate && task.active && new Date() > new Date(task.date));
+    let intId = setInterval(async () => {
+        let taskList = await readTasksAsync();
+        taskList = taskList.filter(task => task.notificate && task.active && new Date() > new Date(task.date));
 
         if (i > 3) {
             clearInterval(intId);
